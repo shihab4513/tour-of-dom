@@ -1,53 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour of DOM</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        li{
+        li {
             color: tomato;
+        }
+
+        #fruits-title {
+            color: black;
+        }
+
+        .important-places {
+            color: blueviolet;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Welcome to my DOM</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, voluptatibus tempora earum ipsum
+            sequi impedit accusantium quidem aut inventore eius.</p>
     </header>
     <main>
-        <h1>My awesome DOM BABA</h1>
-        <ul>
-            <li>Jalali Set</li>
-            <li>shafayet</li>
-            <li>Bonobash</li>
-            
-        </ul>
-        <ul>
-            <li>Apple</li>
-            <li>Banana</li>
-            <li>Carrot</li>
-        </ul>
+        <section>
+            <h1 id="fruits-title">My awesome DOM BABA</h1>
+            <ul>
+                <li>Jalali Set</li>
+                <li>shafayet</li>
+                <li>Bonobash</li>
+
+            </ul>
+        </section>
+        <section>
+            <h1>Fruits I like</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Carrot</li>
+            </ul>
+        </section>
+        <section>
+            <h1 id="places-title">Places i like to visit</h1>
+            <li class="important-places">sondarban</li>
+            <li class="important-places">kataban</li>
+            <li class="important-places">bandorban</li>
+            <li>shalban</li>
+        </section>
+
     </main>
     <script src="dom.js"></script>
     <script>
-        const student={
-            name:'Abul',
-            id:11,
-            study:function(time){
-                console.log(time,'doing study');
+        const student = {
+            name: 'Abul',
+            id: 11,
+            study: function (time) {
+                console.log(time, 'doing study');
             }
         }
-        const liCollection=document.getElementsByTagName('li');
+        const liCollection = document.getElementsByTagName('li');
         // console.log(liCollection);
         for (const li of liCollection) {
-            console.log(li);
+            // console.log(li.innerText);
         }
-        const allHeadings=document.getElementsByTagName('h1');
+        const allHeadings = document.getElementsByTagName('h1');
         for (const h1 of allHeadings) {
-            console.log(h1);
+            // console.log(h1.innerText);
         }
-        
+        const places=document.getElementsByClassName('important-places');
+        for (const place of places) {
+            console.log(place.innerText);
+        }
+        // We can change element inner text in js
+        const fruitsTitle=document.getElementById('fruits-title');
+        fruitsTitle.innerText='Shihab Uddin';
+
     </script>
 </body>
+
 </html>
