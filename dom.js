@@ -51,3 +51,19 @@ placesContainer.style.backgroundColor = 'yellow';
 placesContainer.classList.add('text-center');
 placesContainer.classList.add('large-text');
 
+// ---------------------------------------------------------------24.7
+// console.log(placesContainer.childNodes);
+// console.log(placesContainer.childNodes[1].childNodes.nextSibling);
+const placeUL = document.querySelector('#places-container ul');
+// console.log(placeUL);
+const li = document.createElement('li');
+li.innerText = 'Brand New Place to go';
+// Here append mean add .it will add li variable in placeUL list
+placeUL.append(li);
+const li1 = document.createElement('li');
+li1.innerText = 'Another dynamic li';
+placeUL.append(li1);
+// We can find an element parent node ,child node and sibling
+
+console.log(placeUL.parentNode.parentNode.parentNode);
+
