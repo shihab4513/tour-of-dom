@@ -7,7 +7,7 @@
     <title>Tour of DOM</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        li {
+        .fruits-container li {
             color: tomato;
         }
 
@@ -37,7 +37,7 @@
 
             </ul>
         </section>
-        <section>
+        <section class="fruits-container">
             <h1>Fruits I like</h1>
             <ul>
                 <li>Apple</li>
@@ -63,6 +63,7 @@
                 console.log(time, 'doing study');
             }
         }
+        // option : 1 ,We will use it rarely
         const liCollection = document.getElementsByTagName('li');
         // console.log(liCollection);
         for (const li of liCollection) {
@@ -72,13 +73,23 @@
         for (const h1 of allHeadings) {
             // console.log(h1.innerText);
         }
-        const places=document.getElementsByClassName('important-places');
+        // option :2 , We will use it frequently
+        const places = document.getElementsByClassName('important-places');
         for (const place of places) {
-            console.log(place.innerText);
+            // console.log(place.innerText);
         }
         // We can change element inner text in js
-        const fruitsTitle=document.getElementById('fruits-title');
-        fruitsTitle.innerText='Shihab Uddin';
+        const fruitsTitle = document.getElementById('fruits-title');
+        fruitsTitle.innerText = 'Shihab Uddin';
+        // option :3 
+        // fruit-container er vitor joto li ache sob print hobe
+        const fruitCli = document.querySelectorAll('.fruits-container li');
+        for (const f of fruitCli) {
+            console.log(f.innerText);
+        }
+        // option :4 ,It only return first element 
+        // jodi 1 ta query select korte chai
+        // document.querySelector('.fruits-container li'); 
 
     </script>
 </body>
